@@ -2907,6 +2907,10 @@ function! fugitive#BufReadStatus(...) abort
     endif
     if get(fugitive#ConfigGetAll('advice.statusHints', config), 0, 'true') !~# '^\%(false\|no|off\|0\|\)$'
       call s:AddHeader('Help', 'g?')
+      let s:hint = 's/u "stage (git add) | unstage"\n<a-o> or >/< "expand/close modified diff"'
+      call s:AddHeader('Hint (stage)', 's/u "stage (git add) | unstage"')
+      call s:AddHeader('Hint (modified diff)', '<a-o> or >/< "expand/close modified diff"')
+      call s:AddHeader('Hint (diff split)', 'dd/dv/d? "git diff split/vsplit/help (other detail)"')
     endif
 
     call s:AddSection('Rebasing ' . rebasing_head, rebasing)
@@ -2964,7 +2968,8 @@ function! fugitive#BufReadStatus(...) abort
     call s:MapMotion('gr', "exe <SID>StageJump(v:count, 'Rebasing')")
     call s:Map('n', 'C', ":echoerr 'fugitive: C has been removed in favor of cc'<CR>", '<silent><unique>')
     call s:Map('n', 'a', ":<C-U>execute <SID>Do('Toggle',0)<CR>", '<silent>')
-    call s:Map('n', 'i', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
+    " call s:Map('n', 'i', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
+    call s:Map('n', '<a-o>', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
     call s:Map('n', "=", ":<C-U>execute <SID>StageInline('toggle',line('.'),v:count)<CR>", '<silent>')
     call s:Map('n', "<", ":<C-U>execute <SID>StageInline('hide',  line('.'),v:count)<CR>", '<silent>')
     call s:Map('n', ">", ":<C-U>execute <SID>StageInline('show',  line('.'),v:count)<CR>", '<silent>')

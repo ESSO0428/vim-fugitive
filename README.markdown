@@ -1,4 +1,11 @@
 # fugitive.vim
+NOTE :
+Fork repository
+remap some autoload fugitive.vim some keymap
+```vim
+" call s:Map('n', 'i', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
+call s:Map('n', '<a-o>', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
+```
 
 Fugitive is the premier Vim plugin for Git.  Or maybe it's the premier Git
 plugin for Vim?  Either way, it's "so awesome, it should be illegal".  That's

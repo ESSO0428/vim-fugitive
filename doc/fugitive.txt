@@ -400,7 +400,7 @@ C                       Open the commit containing the current file.
                         "m" appears in "filenames".)
 
                                                 *fugitive_i*
-i                       Jump to the next file or hunk, expanding inline diffs
+<a-o>                       Jump to the next file or hunk, expanding inline diffs
                         automatically.
 
                                                 *fugitive_[[*
