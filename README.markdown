@@ -5,6 +5,9 @@ remap some autoload fugitive.vim some keymap
 ```vim
 " call s:Map('n', 'i', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
 call s:Map('n', '<a-o>', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<silent>')
+" ...
+" call s:Map('n', 'i',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
+call s:Map('n', '<a-o>',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
 ```
 
 Fugitive is the premier Vim plugin for Git.  Or maybe it's the premier Git

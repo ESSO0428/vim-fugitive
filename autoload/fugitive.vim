@@ -2907,10 +2907,9 @@ function! fugitive#BufReadStatus(...) abort
     endif
     if get(fugitive#ConfigGetAll('advice.statusHints', config), 0, 'true') !~# '^\%(false\|no|off\|0\|\)$'
       call s:AddHeader('Help', 'g?')
-      let s:hint = 's/u "stage (git add) | unstage"\n<a-o> or >/< "expand/close modified diff"'
-      call s:AddHeader('Hint (stage)', 's/u "stage (git add) | unstage"')
-      call s:AddHeader('Hint (modified diff)', '<a-o> or >/< "expand/close modified diff"')
-      call s:AddHeader('Hint (diff split)', 'dd/dv/d? "git diff split/vsplit/help (other detail)"')
+      call s:AddHeader('Hint (stage)', 'Toggle stage (-) / stage (s) / unstage (u) -- also known as git add')
+      call s:AddHeader('Hint (modified diff)', 'expand (> or <a-o>) / close modified diff (<)')
+      call s:AddHeader('Hint (diff split)', 'git diff split (dd) / vsplit (dv) / help (d?)')
     endif
 
     call s:AddSection('Rebasing ' . rebasing_head, rebasing)
@@ -7261,7 +7260,8 @@ function! s:BlameMaps(is_ftplugin) abort
   call s:Map('n', 'u',    ':<C-U>exe <SID>BlameJump("")<CR>', '<silent>', ft)
   call s:Map('n', 'P',    ':<C-U>exe <SID>BlameJump("^".v:count1)<CR>', '<silent>', ft)
   call s:Map('n', '~',    ':<C-U>exe <SID>BlameJump("~".v:count1)<CR>', '<silent>', ft)
-  call s:Map('n', 'i',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
+  " call s:Map('n', 'i',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
+  call s:Map('n', '<a-o>',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
   call s:Map('n', 'o',    ':<C-U>exe <SID>BlameCommit("split")<CR>', '<silent>', ft)
   call s:Map('n', 'O',    ':<C-U>exe <SID>BlameCommit("tabedit")<CR>', '<silent>', ft)
   call s:Map('n', 'p',    ':<C-U>exe <SID>BlameCommit("pedit")<CR>', '<silent>', ft)
