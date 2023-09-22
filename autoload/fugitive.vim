@@ -2907,6 +2907,7 @@ function! fugitive#BufReadStatus(...) abort
     endif
     if get(fugitive#ConfigGetAll('advice.statusHints', config), 0, 'true') !~# '^\%(false\|no|off\|0\|\)$'
       call s:AddHeader('Help', 'g?')
+      call s:AddHeader('Hint (workflow-push)', 'All stage -> Git commit -> Git push')
       call s:AddHeader('Hint (stage)', 'Toggle stage (-) / stage (s) / unstage (u) -- also known as git add')
       call s:AddHeader('Hint (modified diff)', 'expand (> or <a-o>) / close modified diff (<)')
       call s:AddHeader('Hint (diff split)', 'git diff split (dd) / vsplit (dv) / help (d?)')
