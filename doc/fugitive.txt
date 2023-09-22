@@ -309,7 +309,7 @@ ge                      Open .git/info/exclude in a split and add the file
                         under the cursor.  Use a count to open .gitignore.
 
                                                 *fugitive_I*
-I                       Invoke |:Git| add --patch or reset --patch on the file
+H                       Invoke |:Git| add --patch or reset --patch on the file
 P                       under the cursor. On untracked files, this instead
                         calls |:Git| add --intent-to-add.
 
