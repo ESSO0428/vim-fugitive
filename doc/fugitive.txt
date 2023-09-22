@@ -305,7 +305,7 @@ X                       Discard the change under the cursor.  This uses
 <                       Remove the inline diff of the file under the cursor.
 
                                                 *fugitive_gI*
-gI                      Open .git/info/exclude in a split and add the file
+ge                      Open .git/info/exclude in a split and add the file
                         under the cursor.  Use a count to open .gitignore.
 
                                                 *fugitive_I*
@@ -443,7 +443,7 @@ gP                      Jump to file [count] in the "Unpulled" section.
 gr                      Jump to file [count] in the "Rebasing" section.
 
                                                 *fugitive_gi*
-gi                      Open .git/info/exclude in a split.  Use a count to
+ge                      Open .git/info/exclude in a split.  Use a count to
                         open .gitignore.
 
                                                 *fugitive_c*
