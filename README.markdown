@@ -16,6 +16,11 @@ call s:MapMotion('gk', 'exe <SID>NextHunk(v:count1)')
 """""""""""""""""""""""
 " call s:Map('n', 'i', ":<C-U>let b:fugitive_display_format -= v:count1<Bar>exe fugitive#BufReadCmd(@%)<CR>", '<silent>')
 call s:Map('n', 'h', ":<C-U>let b:fugitive_display_format -= v:count1<Bar>exe fugitive#BufReadCmd(@%)<CR>", '<silent>')
+"""""""""""""""""""""""
+" call s:Map('n', 'gi',    ":<C-U>exe 'Gsplit' (v:count ? '.gitignore' : '.git/info/exclude')<CR>", '<silent>')
+call s:Map('n', 'ge',    ":<C-U>exe 'Gsplit' (v:count ? '.gitignore' : '.git/info/exclude')<CR>", '<silent>')
+" call s:Map('x', 'gi',    ":<C-U>exe 'Gsplit' (v:count ? '.gitignore' : '.git/info/exclude')<CR>", '<silent>')
+call s:Map('x', 'ge',    ":<C-U>exe 'Gsplit' (v:count ? '.gitignore' : '.git/info/exclude')<CR>", '<silent>')
 ```
 
 Fugitive is the premier Vim plugin for Git.  Or maybe it's the premier Git
