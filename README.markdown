@@ -8,6 +8,11 @@ call s:Map('n', '<a-o>', ":<C-U>execute <SID>NextExpandedHunk(v:count1)<CR>", '<
 " ...
 " call s:Map('n', 'i',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
 call s:Map('n', '<a-o>',    ':<C-U>exe <SID>BlameCommit("exe <SID>BlameLeave()<Bar>edit")<CR>', '<silent>', ft)
+"""""""""""""""""""""""
+" call s:MapMotion('K', 'exe <SID>PreviousHunk(v:count1)')
+call s:MapMotion('gi', 'exe <SID>PreviousHunk(v:count1)')
+" call s:MapMotion('J', 'exe <SID>NextHunk(v:count1)')
+call s:MapMotion('gk', 'exe <SID>NextHunk(v:count1)')
 ```
 
 Fugitive is the premier Vim plugin for Git.  Or maybe it's the premier Git
